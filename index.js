@@ -85,7 +85,7 @@ class Pool extends EventEmitter {
     this.options = Object.assign({}, options)
     this.options.max = this.options.max || this.options.poolSize || 10
     this.log = this.options.log || function () { }
-    this.Client = this.options.Client || Client || require('pg').Client
+    this.Client = this.options.Client || Client
     this.Promise = this.options.Promise || global.Promise
 
     if (typeof this.options.idleTimeoutMillis === 'undefined') {
